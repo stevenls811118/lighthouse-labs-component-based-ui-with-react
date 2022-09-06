@@ -1,6 +1,6 @@
 # Lighthouse Labs | Component-Based UI w/React
 
-[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-component-based-ui-with-react/tree/2022.09.06-web-flex-day-16may2022) | [Vimeo Video Recording](https://vimeo.com/747042913/f95067ce6b)
+[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-component-based-ui-with-react/tree/2022.09.06-web-flex-day-16may2022) | [Vimeo Video Recording](https://vimeo.com/747042913/f95067ce6b) | [Slides](https://docs.google.com/presentation/d/1OwLqPXojVtRoS6wpJrc56ACwyqOWWgpi4wUZfoW1xuk/edit?usp=sharing)
 
 * [X] React Review
 * [X] Relevant ES6 Features
@@ -18,6 +18,7 @@
 * [Rest Parameter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
 * [Components and Props](https://reactjs.org/docs/components-and-props.html)
 * [Lifting State Up](https://reactjs.org/docs/lifting-state-up.html)
+* [LHL Lecture Slides](https://docs.google.com/presentation/d/1OwLqPXojVtRoS6wpJrc56ACwyqOWWgpi4wUZfoW1xuk/edit?usp=sharing)
 
 Storybook Videos:
 
