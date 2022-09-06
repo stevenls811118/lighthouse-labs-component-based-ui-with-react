@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Counter.css';
 
-export default function Counter(props) {
+function Counter(props) {
     const [count, setCount] = useState(0);
     
     return (
@@ -13,3 +13,9 @@ export default function Counter(props) {
         </section>
     );
 }
+
+Counter.propTypes = {
+    heading: PropTypes.string
+};
+
+export default Counter;
