@@ -1,2 +1,7 @@
-# lighthouse-labs-component-based-ui-with-react
-A Lighthouse Labs lecture on "Component-Based UI w/React"
+# Lighthouse Labs | Component-Based UI w/React
+
+* [ ] React Review
+* [ ] Relevant ES6 Features
+* [ ] More on Props
+* [ ] Lifting State
+* [ ] Brief Intro to Storybook
