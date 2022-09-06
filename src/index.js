@@ -4,11 +4,14 @@ import './index.css';
 
 import Counter from './components/Counter';
 import ComponentWithChildren from './components/ComponentWithChildren';
+import PlantList from './components/PlantList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <h1>React Practice</h1>
+
+    <PlantList />
     
     {/* Counter({heading: "Our Second Counter"}) */}
     <Counter heading="Our Second Counter" />

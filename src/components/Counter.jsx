@@ -14,8 +14,8 @@ function Counter(props) {
     );
 }
 
-Counter.propTypes = {
-    heading: PropTypes.string
-};
+// Counter.propTypes = {
+//     heading: PropTypes.string
+// };
 
 export default Counter;
