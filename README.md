@@ -1,6 +1,6 @@
 # Lighthouse Labs | Component-Based UI w/React
 
-* [ ] React Review
+* [X] React Review
 * [ ] Relevant ES6 Features
 * [ ] More on Props
 * [ ] Lifting State
