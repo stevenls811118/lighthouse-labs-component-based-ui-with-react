@@ -7,12 +7,17 @@ import ParagraphWithProps from './components/ParagraphWithProps';
 import Counter from './components/Counter';
 import Counter2 from './components/Counter2';
 
+import ToDo from './components/ToDo';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header /> {/* Header() */}
 
-    <Counter2 />
+    <ToDo heading="Our LHL To-Do List" />
+
+    {/*<Header />*/} {/* Header() */}
+
+    {/* <Counter2 />
 
     <Counter />
 
@@ -21,6 +26,6 @@ root.render(
     <ParagraphWithProps>
       This is enclosed text.
       <a href="https://google.com">Google.com</a>
-    </ParagraphWithProps>
+    </ParagraphWithProps> */}
   </React.StrictMode>
 );
