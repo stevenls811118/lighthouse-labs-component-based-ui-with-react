@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Lighthouse Labs | Component-Based UI w/ React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[GitHub Repository Branch](https://github.com/WarrenUhrich/lighthouse-labs-component-based-ui-with-react/tree/2023.01.24-web-flex-day-19sept2022) | [Vimeo Video Recording](https://vimeo.com/792370960/4520895e7e)
 
-## Available Scripts
+- [x] What the heck is React?
+- [x] Building a project w/ Create-React-App
+- [x] Components
+- [x] Props
+- [x] Review of Closures
+- [x] State
 
-In the project directory, you can run:
+## React
+- From the landing page of [React](https://reactjs.org/):
+  > A JavaScript library for building user interfaces
+- Open source project maintained by Facebook
+- React is built around the concept of managing data
+  - Changes to the underlying data result in changes to the UI
+  - In React, state === data
+- Component-based: UI is composed of small pieces
+- Declarative: We describe the final outcome of our code and not the step-by-step process to achieve that result
 
-### `npm start`
+## Components
+- Components are the building blocks of a webpage (eg. search input, navigation bar, contact us form)
+- Ideally, components should be reusable (which means that their state should be passed into them via props rather than maintaining their own state)
+- Deciding which DOM elements become components and which don't is a skill that comes with practice and experience
+- We will be building all of our components using functions
+- The functions return value contains a mixture of HTML and JS; React calls this `JSX`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```jsx
+// basic component
+import React from 'react';
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+const MyComponent = () => {
+  return (
+    <div className="my-component">
+      <h1>Hello World</h1>
+    </div>
+  );
+};
 
-### `npm test`
+export default MyComponent;
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Review of Closures
+- From MDN:
+> A **closure** is the combination of a function bundled together (enclosed) with references to its surrounding state (the **lexical environment**). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function **creation** time.
+- In other words, functions remember where they were declared and what variables were in scope (they had access to) at the time they were declared
+- This allows us to preserve _state_ in between function calls (subsequent calls to the function can use the updated state value)
+- Contrasting with JS Classes (how we used to create React components): components as objects were instantiated from a Class and it was the same object that was used over and over again. Therefore it always had access to its own internal state. Functional components need some way of creating a _closure_ so that we can achieve the same result.
+- Enter `useState` which keep track of state for us between function calls and allow us to retrieve and edit variables every time the function is invoked (eg. the component is created/updated)
 
-### `npm run build`
+## State
+- State (data) is created in a component by using the `State` hook (`useState`)
+- `useState` takes an initial value for state which will be used on the first render
+- `useState` returns the current value of state and a function (a way to set the value)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```js
+// it's common to destructure the return value from useState
+const [username, setUsername] = useState('');
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### NOTE: We need to use `useState` to keep track of our data so that React will know when changes occur 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Passing Props
+- Child components can be passed pieces of state (data) from their parent component
+- These props are accepted in the child component as an argument (usually called `props`)
 
-### `npm run eject`
+```jsx
+// in parent component
+import MyComponent from './components/MyComponent.jsx';
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+// inside the parent's return
+<MyComponent studentName="Alice"></MyComponent>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+// inside child component
+const MyComponent = (props) => {
+  return (
+    <div>
+      <h1>Hello { props.studentName }!</h1>
+    </div>
+  );
+};
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Props are not limited to JS primitives and data structures; you can also pass behaviour from parent-to-child in the form of functions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Useful Links
+- [ReactJS Docs](https://reactjs.org/docs/getting-started.html)
+- [MDN: Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
