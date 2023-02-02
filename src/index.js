@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-import Header from './components/Header';
-import ParagraphWithProps from './components/ParagraphWithProps';
-import Counter from './components/Counter';
-import Counter2 from './components/Counter2';
+// import Header from './components/Header';
+// import ParagraphWithProps from './components/ParagraphWithProps';
+// import Counter from './components/Counter';
+// import Counter2 from './components/Counter2';
 
 import ToDo from './components/ToDo';
 

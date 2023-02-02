@@ -2,8 +2,7 @@ const Form = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         props.setTaskList((prev) => {
-            const newArr = [...prev];
-            newArr.push(props.newTask);
+            const newArr = [...prev, props.newTask];   
             return newArr;
         });
         props.setNewTask('');
